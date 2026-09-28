@@ -1,116 +1,63 @@
-{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background-color: #f4f7f4;
-    font-family: Arial, sans-serif;
-}
-
-.cabecalho {
-    padding: 15px 25px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #2e5a39; /* Verde botânico */
-}
-
-.cabecalho-link {
-    color: #fff;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-h1 {
-    color: #fff;
-    font-size: 24px;
-}
-
-main {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 30px 15px;
-}
-
-main h2 {
-    color: #2c3e2e;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
+/* Configuração do contêiner principal */
 section {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     gap: 20px;
-    max-width: 1200px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 20px;
 }
 
-/* Estrutura do Cartão */
+/* Estrutura do Cartão (define a perspectiva 3D) */
 .cartao {
-    width: 260px;
-    height: 320px;
-    perspective: 1000px;
+    width: 250px;
+    height: 350px;
+    perspective: 1000px; /* Cria a profundidade para o efeito 3D */
+    cursor: pointer;
 }
 
+/* Elemento interno que realmente gira */
 .cartao-interno {
     position: relative;
     width: 100%;
     height: 100%;
+    text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
 }
 
+/* Efeito ao passar o mouse: gira 180 graus no eixo Y */
 .cartao:hover .cartao-interno {
     transform: rotateY(180deg);
 }
 
-.cartao-frente,
-.cartao-verso {
+/* Estilo comum para a frente e o verso */
+.cartao-frente, .cartao-verso {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 12px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
-    backface-visibility: hidden;
-    overflow: hidden;
+    backface-visibility: hidden; /* Esconde a parte de trás quando girado */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
+    justify-content: center;
+    padding: 15px;
+    box-sizing: border-box;
     background-color: #ffffff;
 }
 
-.cartao-imagem {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-}
-
-.cartao-frente p,
-.cartao-verso p {
-    padding: 15px;
-    font-size: 14px;
-    color: #333;
-    line-height: 1.4;
-}
-
+/* Posição inicial do verso (já começa invertido) */
 .cartao-verso {
     transform: rotateY(180deg);
-    background-color: #e8f0e9; /* Tom suave de verde para o verso */
+    background-color: #f0f8ff;
 }
 
-footer {
-    background-color: #2e5a39;
-    padding: 15px 25px;
-    color: #fff;
-    text-align: center;
+/* Ajuste das imagens dos cartões */
+.cartao-imagem {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
 }
-
