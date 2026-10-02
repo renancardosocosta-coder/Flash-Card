@@ -98,18 +98,18 @@
     .cartao-verso p {
     padding: 15px;
     font-size: 14px;
-    color: #db0202;
+    color: #db8f02;
     line-height: 1.4;
     }
     
     .cartao-verso {
     transform: rotateY(180deg);
-    background-color: #e00505;
+    background-color: #bd0707;
     }
     
     footer {
-    background-color: #f00909;
+    background-color: #f0c609;
     padding: 15px 25px;
-    color: #740202;
+    color: #e09e0d;
     text-align: center;
     }
